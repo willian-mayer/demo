@@ -25,7 +25,7 @@ export default function Hero() {
 
       {/* Contenido */}
       {isLoaded && (
-        <div className="relative z-10 h-full flex items-center justify-center text-white text-5xl animate-fade-in">
+        <div className="relative z-10 h-full flex items-center text-center justify-center text-white text-5xl animate-fade-in">
           Bienvenido a mi sitio
         </div>
       )}
