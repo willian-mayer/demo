@@ -1,8 +1,17 @@
-"use client"
+'use client';
 
 import React, { useState, useEffect } from 'react';
+import message from '../data/HeroMessage.json';
 
-export default function Hero() {
+// 🔸 Tipo correcto para los datos del JSON
+interface Message {
+  h1: string;
+  h2: string;
+}
+
+// 🔹 Usamos React.FC sin props, ya que no recibe ninguno
+const Hero: React.FC = () => {
+  const { h1, h2 }: Message = message;
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -18,17 +27,16 @@ export default function Hero() {
       }`}
       style={{ backgroundImage: isLoaded ? `url('/hero.webp')` : 'none' }}
     >
-      {/* Overlay oscuro */}
-      {isLoaded && (
-        <div className="absolute inset-0 bg-[rgba(0,0,0,0.5)]"></div>
-      )}
+      {isLoaded && <div className="absolute inset-0 bg-[rgba(0,0,0,0.5)]" />}
 
-      {/* Contenido */}
       {isLoaded && (
-        <div className="relative z-10 h-full flex items-center text-center justify-center text-white text-5xl animate-fade-in">
-          Bienvenido a mi sitio
+        <div className="relative z-10 h-full flex items-center text-center justify-center text-white text-5xl animate-fade-in flex-col gap-4">
+          <h1>{h1}</h1>
+          <h2>{h2}</h2>
         </div>
       )}
     </section>
   );
-}
+};
+
+export default Hero;
