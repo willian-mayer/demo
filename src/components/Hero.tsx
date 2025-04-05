@@ -30,9 +30,12 @@ const Hero: React.FC = () => {
       {isLoaded && <div className="absolute inset-0 bg-[rgba(0,0,0,0.5)]" />}
 
       {isLoaded && (
-        <div className="relative z-10 h-full flex items-center text-center justify-center text-white text-5xl animate-fade-in flex-col gap-4">
-          <h1>{h1}</h1>
-          <h2>{h2}</h2>
+        <div className="relative z-10 h-full flex items-center text-center justify-center text-white animate-fade-in flex-col gap-4">
+          <div className='mx-8'>
+          <h1 className='oswald text-6xl md:text-8xl mb-10'>{h1}</h1>
+          <h2 className='oswald text-3xl md:text-4xl '>{h2}</h2>
+          </div>
+  
         </div>
       )}
     </section>

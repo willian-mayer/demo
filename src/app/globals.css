@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 @import "tailwindcss";
 
 @layer utilities {
@@ -15,4 +17,10 @@
   .animate-fade-in {
     animation: fade-in 1s ease-out forwards;
   }
+}
+
+.oswald {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
